@@ -1,0 +1,182 @@
+/* ===== ESTILOS DO HEADER ===== */
+header {
+    background-color: #1a5276;
+    color: white;
+    padding: 15px 0;
+    position: relative;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+/* ===== LOGO ===== */
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.logo img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.logo span {
+    color: #f39c12;
+}
+
+/* ===== BOTÃO MENU MOBILE ===== */
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 10;
+}
+
+.mobile-menu-toggle span {
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    border-radius: 3px;
+    transition: all 0.3s;
+}
+
+/* ===== NAVEGAÇÃO ===== */
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 25px;
+    position: relative;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+    padding: 5px 0;
+    position: relative;
+}
+
+nav ul li a:hover {
+    color: #f39c12;
+}
+
+nav ul li a.active {
+    color: #f39c12;
+}
+
+nav ul li a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #f39c12;
+}
+
+/* ===== NÚMERO DE CONTATO ===== */
+.contact-number {
+    display: flex;
+    align-items: center;
+    background-color: #f39c12;
+    padding: 8px 15px;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.contact-number:hover {
+    background-color: #e67e22;
+}
+
+.contact-number i {
+    margin-right: 8px;
+}
+
+/* ===== RESPONSIVIDADE - MOBILE ===== */
+@media (max-width: 768px) {
+    .header-content {
+        margin-bottom: -8%;
+    }
+
+    /* Botão menu mobile */
+    .mobile-menu-toggle {
+        display: flex;
+        position: absolute;
+        right: 5%;
+        top: 35%;
+        transform: translateY(-50%);
+    }
+
+    .mobile-menu-toggle.active span:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+
+    .mobile-menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .mobile-menu-toggle.active span:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+
+    /* Navegação mobile */
+    nav {
+        position: absolute;
+        top: 88%;
+        left: 0;
+        width: 100%;
+        background-color: #1a5276;
+        padding: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+        z-index: 9;
+    }
+
+    nav.active {
+        max-height: 300px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    /* Número de contato mobile */
+    .contact-number {
+        margin-left: 43%;
+        margin-top: 45px;
+        margin-bottom: 0px;
+        transform: translateY(-50%);
+    }
+
+    .contact-number i {
+        margin-right: 5px;
+    }
+
+    .contact-number a {
+        font-size: 14px;
+    }
+}

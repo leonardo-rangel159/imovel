@@ -1,0 +1,325 @@
+/* ===== FEATURED SECTION ===== */
+.featured {
+    padding: 100px 0 80px;
+    background-color: rgba(1, 50, 80, 0.14);
+    position: relative;
+}
+
+/* Títulos */
+.section-title {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #1a1a1a;
+    font-size: 3.2rem;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: #ea723d;
+}
+
+.featured-notice {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #7a7a7a;
+    font-size: 1.6rem;
+}
+
+/* Container de propriedades */
+.featured-properties {
+    position: relative;
+    overflow: hidden;
+    padding: 20px 0;
+}
+
+.properties-container {
+    display: flex;
+    transition: transform 0.5s ease;
+    margin: 0 -15px;
+}
+
+/* Cartão de propriedade */
+.property-card {
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    flex: 0 0 100%;
+    max-width: 95%;
+    margin: 0px 40px 0px 15px;
+}
+
+/* Imagem da propriedade */
+.property-image-container {
+    height: 250px;
+    position: relative;
+    overflow: hidden;
+}
+
+.property-image {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.3s ease;
+}
+
+.property-image:hover {
+    transform: scale(1.05);
+}
+
+/* Ícone da galeria */
+.gallery-icon {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.gallery-icon:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+/* Informações da propriedade */
+.property-info {
+    padding: 20px;
+}
+
+.property-info h3 {
+    color: #1a1a1a;
+    margin-bottom: 10px;
+    font-size: 2rem;
+}
+
+.property-info p {
+    color: #7a7a7a;
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+}
+
+.property-status {
+    display: inline-block;
+    background-color: #e74c3c;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+/* Navegação */
+.navigation-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.nav-btn {
+    background-color: #013250;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 1.4rem;
+}
+
+.nav-btn:hover {
+    background-color: #1cb2ff;
+}
+
+.dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    gap: 8px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #bbb;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dot.active {
+    background-color: #013250;
+}
+
+/* ===== MODAL DA GALERIA ===== */
+.gallery-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.gallery-container {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+}
+
+/* Imagem principal da galeria */
+.gallery-main-image {
+    max-width: 100%;
+    max-height: 80vh;
+    display: block;
+    margin: 0 auto;
+    border-radius: 8px;
+}
+
+/* Navegação da galeria */
+.gallery-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.gallery-nav:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.gallery-prev {
+    left: 15px;
+}
+
+.gallery-next {
+    right: 15px;
+}
+
+/* Botão fechar */
+.gallery-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: white;
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+/* Thumbnails da galeria */
+.gallery-thumbnails {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.gallery-thumbnail {
+    width: 80px;
+    height: 60px;
+    object-fit: cover;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity 0.3s;
+    border-radius: 4px;
+}
+
+.gallery-thumbnail:hover,
+.gallery-thumbnail.active {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2.8rem;
+    }
+
+    .featured {
+        padding: 60px 0 40px;
+    }
+
+    .property-card {
+        margin: 0px 20px 0px 10px;
+        max-width: 90%;
+    }
+
+    .gallery-nav {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+
+    .gallery-thumbnail {
+        width: 60px;
+        height: 45px;
+    }
+
+    .property-image-container {
+        height: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-title {
+        font-size: 2.4rem;
+    }
+
+    .featured-notice {
+        font-size: 1.4rem;
+    }
+
+    .property-info h3 {
+        font-size: 1.8rem;
+    }
+
+    .property-info p {
+        font-size: 1.2rem;
+    }
+
+    .gallery-container {
+        max-width: 95%;
+    }
+
+    .gallery-thumbnails {
+        gap: 5px;
+    }
+
+    .gallery-thumbnail {
+        width: 50px;
+        height: 40px;
+    }
+}
