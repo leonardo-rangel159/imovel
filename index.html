@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simule seu financiamento</title>
+    <link rel="icon" type="image/gif" href="_Imagens/icons8-casa-48.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="Css/home.css">
+    <link rel="stylesheet" type="text/css" href="Css/nav.css">
+    <link rel="stylesheet" type="text/css" href="Css/form.css">
+    <link rel="stylesheet" type="text/css" href="Css/featured.css">
+    <link rel="stylesheet" type="text/css" href="Css/property-search.css">
+    <link rel="stylesheet" type="text/css" href="Css/new-properties.css">
+    <link rel="stylesheet" type="text/css" href="Css/contact.css">
+    <link rel="stylesheet" type="text/css" href="Css/footer.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiByeD0iOCIgZmlsbD0iIzFhNTI3NiIvPgo8cGF0aCBkPSJNMTAgMTVIMzBWMjVIMTBWMTVaIiBmaWxsPSIjZjM5YzEyIi8+CjxwYXRoIGQ9Ik0xNSAzMEgyNVYzNUgxNVYzMFoiIGZpbGw9IndoaXRlIi8+Cjwvc3ZnPgo="
+                    alt="Logo">
+                Compre sua Casa<span>.</span>
+            </div>
+    
+            <button class="mobile-menu-toggle" aria-label="Abrir menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+    
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="#">Todos os imóveis</a></li>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+            </nav>
+    
+            <div class="contact-number">
+                <a href="tel:+5522222222222" style="text-decoration: none;color: white;">
+                    <i class="fas fa-phone"></i> 22 22222-2222
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Simule seu financiamento</h1>
+            <p>Em 5 passos simples</p>
+    
+            <form id="simulation-form" class="simulation-form">
+                <!-- Parte 1 -->
+                <div class="form-part active" data-part="1">
+                    <h2>Para começar, selecione a região:</h2>
+
+                    <div class="form-group">
+                        <select id="property-type" required>
+                            <optgroup label="Reigões RJ">
+                                <option value="Centro">Centro</option>
+                                <option value="Sul">Zona Sul</option>
+                                <option value="Norte">Zona Norte</option>
+                                <option value="Metropolitana">Região Metropolitana</option>
+                            </optgroup>
+                            <optgroup label="Outras cidades">
+                                <option value="Niteroi">Niterói</option>
+                            </optgroup>
+                        </select>
+                    </div>
+
+                    <div class="form-buttons">
+                        <button type="button" class="btn-next">Próximo</button>
+                    </div>
+                </div>
+    
+                <!-- Parte 2 -->
+                <div class="form-part" data-part="2">
+                    <h2>Qual o seu nome?</h2>
+
+                    <div class="form-group">
+                        <input type="text" id="full-name" placeholder="Nome Completo" pattern="[A-Za-zÀ-ÿ\s]+"
+                            title="Por favor, digite apenas letras" required>
+                        <small class="error-message" style="display: none; color: #ff6b6b; margin-top: 5px;">
+                            Por favor, digite apenas letras e espaços
+                        </small>
+                    </div>
+
+                    <div class="form-buttons">
+                        <button type="button" class="btn-back">Voltar</button>
+                        <button type="button" class="btn-next">Próximo</button>
+                    </div>
+                </div>
+    
+                <!-- Parte 3 -->
+                <div class="form-part" data-part="3">
+                    <h2>Selecione o prazo</h2>
+                
+                    <div class="form-group">
+                        <label for="loan-term">Qual o seu telefone (com DDD)?</label>
+                        <input type="tel" id="phone-number" placeholder="(XX) XXXXX-XXXX" pattern="\(\d{2}\) \d{4,5}-\d{4}">
+                        <small class="error-message" style="display: none; color: #ff6b6b; margin-top: 5px;">
+                            Formato inválido. Use (XX) XXXXX-XXXX
+                        </small>
+                    </div>
+                
+                    <div class="form-group">
+                        <label>Métodos de contato:</label>
+                        <div class="checkbox-group">
+                            <div class="contact-method-group">
+                                <input type="checkbox" id="WhatsApp" name="contact-method" value="WhatsApp">
+                                <label for="WhatsApp">WhatsApp</label>
+                            </div>
+                            <div class="contact-method-group">
+                                <input type="checkbox" id="telefone" name="contact-method" value="telefone">
+                                <label for="telefone">Telefone</label>
+                            </div>
+                            <div class="contact-method-group">
+                                <input type="checkbox" id="SMS" name="contact-method" value="SMS">
+                                <label for="SMS">SMS</label>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="form-buttons">
+                        <button type="button" class="btn-back">Voltar</button>
+                        <button type="button" class="btn-next">Próximo</button>
+                    </div>
+                </div>
+    
+                <!-- Parte 4-->
+                <div class="form-part" data-part="4">
+                    <h2>Qual o seu melhor email?</h2>
+                
+                    <div class="form-group">
+                        <input type="email" id="email" placeholder="seu@email.com">
+                        <small class="error-message" style="display: none; color: #ff6b6b; margin-top: 5px;">
+                            Email inválido. Use o formato seu@email.com
+                        </small>
+                    </div>
+                
+                    <div class="form-group">
+                        <div class="contact-method-group">
+                            <input type="checkbox" id="email-contact" name="email" value="email">
+                            <label for="email-contact">Aceito receber contato por email</label>
+                        </div>
+                        <small class="error-message" style="display: none; color: #ff6b6b; margin-top: 5px;">
+                            Email inválido. Use o formato seu@email.com
+                        </small>
+                    </div>
+                
+                    <div class="form-buttons">
+                        <button type="button" class="btn-back">Voltar</button>
+                        <button type="button" class="btn-next">Próximo</button>
+                    </div>
+                </div>
+
+                <!-- Parte 5 -->
+                <div class="form-part" data-part="5">
+                    <h2>Informações adicionais</h2>
+                
+                    <div class="form-group">
+                        <label>Utilizará seu FGTS?</label>
+                        <div class="radio-group">
+                            <div>
+                                <input type="radio" id="fgts-sim" name="fgts" value="sim" required>
+                                <label for="fgts-sim">Sim</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="fgts-nao" name="fgts" value="nao" required>
+                                <label for="fgts-nao">Não</label>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="form-group">
+                        <label>Possui algum valor para a entrada?</label>
+                        <div class="radio-group">
+                            <div>
+                                <input type="radio" id="entrada-sim" name="entrada-valor" value="sim" required>
+                                <label for="entrada-sim">Sim</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="entrada-nao" name="entrada-valor" value="nao" required>
+                                <label for="entrada-nao">Não</label>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="form-group" id="valor-entrada-container" style="display: none;">
+                        <input type="number" id="valor-entrada" name="valor-entrada" placeholder="Valor de entrada" min="0">
+                    </div>
+                
+                    <div class="form-buttons">
+                        <button type="button" class="btn-back">Voltar</button>
+                        <button type="submit" class="btn-complete">Concluir</button>
+                    </div>
+                </div>
+    
+                <div class="progress-indicator">
+                    <div class="progress-step active" data-step="1"></div>
+                    <div class="progress-step" data-step="2"></div>
+                    <div class="progress-step" data-step="3"></div>
+                    <div class="progress-step" data-step="4"></div>
+                    <div class="progress-step" data-step="5"></div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Featured Properties -->
+    <section class="featured">
+        <div class="container">
+            <h2 class="section-title">Em destaque</h2>
+            <p class="featured-notice">Passe para os lados e veja todos os destaques.</p>
+    
+            <div class="featured-properties">
+                <div class="properties-container">
+                    <!-- Property 1 -->
+                    <div class="property-card">
+                        <div class="property-image-container">
+                            <div class="property-image"
+                                style="background-image: url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1176&q=80');">
+                            </div>
+                            <div class="gallery-icon" data-property="1">
+                                <i class="fas fa-images"></i>
+                            </div>
+                        </div>
+                        <div class="property-info">
+                            <h3>Caminhos da Guanabara – Niterói</h3>
+                            <p>O Caminhos da Guanabara conecta você ao melhor de Niterói, proporcionando uma rotina prática
+                                e repleta de possibilidades. Localizado estrategicamente na Rua...</p>
+                            <span class="property-status">Imóvel na Planta</span>
+                        </div>
+                    </div>
+    
+                    <!-- Property 2 -->
+                    <div class="property-card">
+                        <div class="property-image-container">
+                            <div class="property-image"
+                                style="background-image: url('https://images.unsplash.com/photo-1574362848149-11496d93a7c7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1084&q=80');">
+                            </div>
+                            <div class="gallery-icon" data-property="2">
+                                <i class="fas fa-images"></i>
+                            </div>
+                        </div>
+                        <div class="property-info">
+                            <h3>Arcos do Porto Residencial</h3>
+                            <p>Lazer Completo na Porto Maravilha. Unidades Studio e Apartamentos de 1 ou 2 Quartos com opção
+                                de Suite e Vaga. Lançamento Cury Arcos do Porto.</p>
+                            <span class="property-status">Imóvel na Planta</span>
+                        </div>
+                    </div>
+    
+                    <!-- Property 3 -->
+                    <div class="property-card">
+                        <div class="property-image-container">
+                            <div class="property-image"
+                                style="background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1153&q=80');">
+                            </div>
+                            <div class="gallery-icon" data-property="3">
+                                <i class="fas fa-images"></i>
+                            </div>
+                        </div>
+                        <div class="property-info">
+                            <h3>Residencial Pixinguinha</h3>
+                            <p>No Porto Maravilha, você encontra tudo: mobilidade, lazer, cultura, segurança e qualidade de
+                                vida. E o Residencial Pixinguinha traz a oportunidade perfeita...</p>
+                            <span class="property-status">Imóvel na Planta</span>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="navigation-buttons">
+                    <button class="nav-btn prev-btn">
+                        <i class="fas fa-chevron-left"></i> Anterior
+                    </button>
+                    <button class="nav-btn next-btn">
+                        Próximo <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+    
+                <div class="dots">
+                    <div class="dot active" data-index="0"></div>
+                    <div class="dot" data-index="1"></div>
+                    <div class="dot" data-index="2"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Gallery Modal -->
+    <div class="gallery-modal">
+        <button class="gallery-close">
+            <i class="fas fa-times"></i>
+        </button>
+    
+        <div class="gallery-container">
+            <img class="gallery-main-image" src="" alt="Imóvel">
+    
+            <button class="gallery-nav gallery-prev">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="gallery-nav gallery-next">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+    
+            <div class="gallery-thumbnails"></div>
+        </div>
+    </div>
+
+    <!-- Property Search -->
+    <section class="property-search">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Encontre seu imóvel</h2>
+
+            <div class="busca">
+                <input type="text" placeholder="Digite a localização">            
+            </div>
+
+            <div class="search-options">
+                <div class="search-option">
+                    <i class="fas fa-search"></i> Palavra Chave
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Properties -->
+    <section class="new-properties">
+        <div class="container">
+            <h2 class="section-title">Lançamentos</h2>
+            <p class="featured-notice">Novos imóveis disponíveis</p>
+
+            <div class="properties-grid">
+                <div class="property-card">
+                    <div class="property-image"
+                        style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');">
+                    </div>
+                    <div class="property-info">
+                        <h3>Farol da Guanabara – Porto Maravilha</h3>
+                        <p>Descubra a fórmula que une a vista mais icônica da cidade, mobilidade privilegiada e um sucesso de vendas comprovado. Bem-vindo ao Farol da Guanabara, onde você encontra o melhor do Rio de Janeiro.</p>
+                        <span class="property-status">Lançamento</span>
+                    </div>
+                </div>
+
+                <div class="property-card">
+                    <div class="property-image"
+                        style="background-image: url('https://images.unsplash.com/photo-1600566753052-dc5d4c361816?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');">
+                    </div>
+                    <div class="property-info">
+                        <h3>Cartola Residencial</h3>
+                        <p>Analisamos o mercado e este projeto se destaca por uma combinação imbatível de localização, qualidade e potencial de valorização. O Cartola Residencial oferece o melhor da vida urbana com conforto e sofisticação.</p>
+                        <span class="property-status">Imóvel na Planta</span>
+                    </div>
+                </div>
+
+                <div class="property-card">
+                    <div class="property-image"
+                        style="background-image: url('https://images.unsplash.com/photo-1600585154526-990dced4db0d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');">
+                    </div>
+                    <div class="property-info">
+        <h3>Residencial Pixinguinha</h3>
+        <p>No Porto Maravilha, você encontra tudo: mobilidade, lazer, cultura, segurança e qualidade de vida. E o Residencial Pixinguinha traz a oportunidade perfeita para viver esse novo momento da Cidade...</p>
+            <span class="property-status">Imóvel na Planta</span>
+                    </div>
+                </div>
+
+                <div class="property-card">
+                    <div class="property-image"
+                        style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');">
+                    </div>
+                    <div class="property-info">
+                        <h3>Caminhos da Guanabara – Niterói</h3>
+                        <p>O Caminhos da Guanabara conecta você ao melhor de Niterói, proporcionando uma rotina prática e repleta de possibilidades. Localizado estrategicamente na Rua Prof. Plínio Leite 45, ao lado do Caminho Niemeyer.</p>
+                        <span class="property-status">Imóvel na Planta</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pagination">
+                <a href="javascript:void(0)" class="pagination-item active">1</a>
+                <a href="javascript:void(0)" class="pagination-item">2</a>
+                <a href="javascript:void(0)" class="pagination-item">3</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="contact">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Dúvidas?</h2>
+            <p class="featured-notice">Envie uma mensagem por este formulário e um de nossos Corretores entrará em
+                contato.</p>
+
+            <div class="contact-container">
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <input type="text" placeholder="Nome Completo" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" placeholder="Telefone / Whatsapp" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Mensagem" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">ENVIAR</button>
+                    </form>
+                </div>
+
+                <div class="contact-info">
+                    <h3>Precisando de Ajuda?</h3>
+                    <p>Fale conosco e retornaremos o mais rápido possível.</p>
+
+                    <div class="contact-details">
+                        <p><i class="fas fa-home"></i> Home</p>
+                        <p><i class="fas fa-envelope"></i> Contato</p>
+                        <p><i class="fas fa-building"></i> Todos os imóveis</p>
+                        <p><i class="fas fa-phone"></i> +55 21 978048-1497</p>
+                        <p><i class="fas fa-envelope"></i> civilispatricia.r@curyimoveis.com.br</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>CURY</h3>
+                    <p>Sua jornada para o imóvel dos sonhos começa aqui.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Links Rápidos</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Todos os imóveis</a></li>
+                        <li><a href="#">Contato</a></li>
+                        <li><a href="#">Simulador</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Contato</h3>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> +55 22 22222-2222</li>
+                        <li><i class="fas fa-envelope"></i> contato@curyimoveis.com.br</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Av. Brasil, 2000 - Centro</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>© Todos os direitos reservados</p>
+            </div>
+        </div>
+    </footer>
+
+    <!--Script Botão Nav que abre o menu no mobile--> 
+    <script src="js/Botao-nav.js"></script>
+
+    <!--Script Formulario para dividir ele em partes-->
+    <script src="js/form.js"></script>
+
+    <!--Script Carrossel de Imóveis em Destaque-->
+    <script src="js/propriedade.js"></script>
+
+    <script>
+        // Script simples para demonstrar funcionalidade de seleção de região
+        document.querySelectorAll('.region-btn').forEach(button => {
+            button.addEventListener('click', function () {
+                alert('Você selecionou a região: ' + this.textContent);
+            });
+        });
+    </script>
+</body>
+
+</html>
